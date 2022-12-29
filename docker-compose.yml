@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    container_name: "backend"
+    build: ./
+    ports:
+      - "5500:8080"
+  front:
+    container_name: "frontend"
+    image: "myfront:latest"
+    ports:
+      - "8080:3000"
