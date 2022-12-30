@@ -17,13 +17,13 @@ public class MoneyTransferServiceController {
     public MoneyTransferServiceController(MoneyTransferService moneyTransferService) {
         this.moneyTransferService = moneyTransferService;
     }
-    @CrossOrigin(origins = "https://serp-ya.github.io")
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/transfer")
     public String transferMoney(@RequestBody @Validated Transfer transfer) {
         return this.moneyTransferService.transferMoneyPrepare(transfer);
     }
 
-    @CrossOrigin(origins = "https://serp-ya.github.io")
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/confirmOperation")
     public String confirm(@RequestBody @Validated Confirm confirm) {
         return this.moneyTransferService.transferMoney(confirm);
